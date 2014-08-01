@@ -1,4 +1,5 @@
 .*.swp
 *.pyc
+preg.html
 settings.py
 Makefile
