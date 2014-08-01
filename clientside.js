@@ -10,6 +10,7 @@ ThousandQueries = (function() {
     var dest, lxn, us;
     lxn = document.location.toString().replace(/\/dashboards\//, '/json/');
     dest = "" + lxn + ".json";
+    console.log("Request to: " + dest);
     us = this;
     return $.ajax(dest, {
       data: {

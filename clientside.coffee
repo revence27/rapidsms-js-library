@@ -4,6 +4,7 @@ class ThousandQueries
   makeReq: (rid, cb) ->
     lxn   = document.location.toString().replace(/\/dashboards\//, '/json/')
     dest  = "#{lxn}.json"
+    console.log "Request to: #{dest}"
     us    = this
     $.ajax(dest,
       data: {reqid: rid}
