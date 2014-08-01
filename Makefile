@@ -1,6 +1,9 @@
 all: clientside.js
 	true
 
+marvin: tpt.py
+	python tpt.py .
+
 test:
 	coffee --watch -cb .
 
