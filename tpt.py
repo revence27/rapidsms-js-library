@@ -12,7 +12,7 @@ def mmain(argv):
   jinja = Environment(loader = FileSystemLoader(app))
   for arg in argv[2:]:
     with jinja.get_template(arg) as fch:
-      raise Exception, str(fch)
+      raise Exception, str((fch, settings.get_test_data()))
   pass
 
 if __name__ == '__main__':
