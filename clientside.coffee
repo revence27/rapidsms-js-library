@@ -1,3 +1,11 @@
+class ClientSide
+  constructor: (doc) ->
+    @doc  = $(doc)
+
+  activateDates: (cn) ->
+    for ad in $(".#{cn}", @doc)
+      $(ad).datepicker()
+
 class ThousandQueries
   constructor: (@reqdata) ->
 

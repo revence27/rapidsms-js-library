@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RapidSMS • {{  title }}</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div id="nom">
+          <div id="main"></div>
+          <div id="sub"></div>
+          <div id="motto"></div>
+        </div>
+        <div id="langs">
+          <ul>
+            <li>English</li>
+            <li>Kinyarwanda</li>
+            <li>Français</li>
+          </ul>
+        </div>
+        <div id="indicators">
+          {%  for ind in indicators  %}
+            <div class="indicator">
+              <a href="{{ ind.url }}">{{ ind.name  }}</a>
+            </div>
+          {%  endfor  %}
+        </div>
+        <div id="maintitle">{{  title }}</div>
+        <div id="navbar">
+          <form>
+            <input class="activedate" type="date" name="start" />
+            <input class="activedate" type="date" name="end" />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+      <div id="trunk">
+        {%  block mainpart  %}
+          {{  static_path }}
+        {%  endblock  %}
+      </div>
+      <div id="footer">
+        &copy; 2014
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <script src="{{ static_path }}/javascripts/clientside.js" type="text/javascript"></script>
+    <script src="{{ static_path }}/javascripts/samples.js" type="text/javascript"></script>
+  </body>
+</html>

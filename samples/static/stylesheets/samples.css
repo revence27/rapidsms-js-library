@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Kaushan+Script|Playfair+Display+SC:400,400italic,700,700italic,900,900italic|Roboto:400,400italic,700,700italic,900,900italic,500,500italic&subset=latin,latin-ext);
+body {
+  font-family: "Playfair Display", "Liberation Serif", serif;
+  font-size: 14pt;
+  font-weight: 100;
+  background: #ececec;
+  color: #131313; }
+  body #main {
+    width: 95%;
+    margin: 2%;
+    padding: 0.5%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-top: 0em; }
+    body #main #header {
+      font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif; }
+      body #main #header #maintitle {
+        font-family: "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+        font-size: 240%; }
+      body #main #header #langs {
+        font-size: 50%;
+        font-weight: 500; }
+        body #main #header #langs ol, body #main #header #langs ul {
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+          text-align: right; }
+          body #main #header #langs ol li, body #main #header #langs ul li {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: inline;
+            margin-left: 0.25em;
+            margin-right: 0.25em; }
+    body #main #footer {
+      font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+      font-size: 50%;
+      font-weight: 500;
+      text-align: center;
+      margin-left: 25%;
+      width: 50%; }

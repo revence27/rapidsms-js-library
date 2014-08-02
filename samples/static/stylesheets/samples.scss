@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Kaushan+Script|Playfair+Display+SC:400,400italic,700,700italic,900,900italic|Roboto:400,400italic,700,700italic,900,900italic,500,500italic&subset=latin,latin-ext);
+
+$f1:  "Playfair Display", "Liberation Serif", serif;
+$f2:  "Playfair Display SC", $f1, sans-serif;
+$f3:  "Kaushan Script", $f2;
+$f4:  "Roboto", $f3;
+
+$grlarge: 68.2%;
+$grsmall: 100% - $grlarge;
+
+$maindark: rgb(19, 19, 19);
+$mainlight: rgb(236, 236, 236);
+
+body
+{
+  font-family: $f1;
+  font-size: 14pt;
+  font-weight: 100;
+  background: $mainlight;
+  color: $maindark;
+
+  #main
+  {
+    width: 95%;
+    margin: 2%;
+    padding: 0.5%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-top: 0em;
+
+    #header
+    {
+      font-family: $f4;
+
+      #nom
+      {
+        #main
+        {
+        }
+
+        #sub
+        {
+        }
+
+        #motto
+        {
+        }
+      }
+
+      #navbar
+      {
+      }
+
+      #maintitle
+      {
+        font-family: $f3;
+        font-size: 240%;
+      }
+
+      #indicators
+      {
+      }
+
+      #langs
+      {
+        font-size: 50%;
+        font-weight: 500;
+
+        ol, ul
+        {
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+          text-align: right;
+
+          li
+          {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: inline;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+          }
+        }
+      }
+    }
+
+    #trunk
+    {
+
+    }
+
+    #footer
+    {
+      font-family: $f4;
+      font-size: 50%;
+      font-weight: 500;
+      text-align: center;
+      margin-left: 25%;
+      width: 50%;
+    }
+  }
+}
