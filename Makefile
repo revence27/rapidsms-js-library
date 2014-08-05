@@ -1,4 +1,4 @@
-ACTIVE_DIR=../display
+ACTIVE_DIR=samples/html
 ACTIVE_FILE=pregnancy.html
 
 all: clientside.js

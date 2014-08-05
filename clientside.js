@@ -12,7 +12,9 @@ ClientSide = (function() {
     _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       ad = _ref[_i];
-      _results.push($(ad).datepicker());
+      _results.push($(ad).datepicker({
+        dateFormat: 'dd/mm/yy'
+      }));
     }
     return _results;
   };

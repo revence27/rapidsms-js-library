@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RapidSMS • {{  title }}</title>
+    <title>RapidSMS • {%  block title %}  Welcome {%  endblock  %}</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />
+    <!--  <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />  -->
   </head>
   <body>
     <div id="main">
       <div id="header">
         <div id="nom">
-          <div id="main"></div>
-          <div id="sub"></div>
+          <div id="primary">
+            <img src="{{  static_path }}/images/rwanda.png" />
+            <!--
+          </div>
+          <div id="secondary">
+                  -->
+            <img src="{{  static_path }}/images/rapid.png" />
+            <img src="{{  static_path }}/images/unicef.png" />
+          </div>
           <div id="motto"></div>
         </div>
         <div id="langs">
@@ -21,17 +28,44 @@
           </ul>
         </div>
         <div id="indicators">
+          <div class="homelink">
+            <a href="/">Home</a>
+          </div>
           {%  for ind in indicators  %}
-            <div class="indicator">
-              <a href="{{ ind.url }}">{{ ind.name  }}</a>
+          <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}">
+              <a href="/dashboards/{{ ind.ref }}">{{ ind.name  }}</a>
             </div>
           {%  endfor  %}
         </div>
-        <div id="maintitle">{{  title }}</div>
+        <div id="subtitle">
+          <div class="mainhead">{%  block subtitle %}{% endblock  %}</div>
+          <div class="extrainfo">{%  block extrainfo %}
+            <!--  <a href="/tables/{{ ref }}"><div class="location">Rwanda</div>  -->
+            <a href=""><div class="location">Rwanda</div>
+            <div class="times">
+              <div class="start">
+                {{  nav.start.strftime("%A %d %B %Y") }}
+              </div>
+              <div class="finish">
+                {{  nav.finish.strftime("%A %d %B %Y") }}
+</div></a> ({{  (nav.finish - nav.start).days|neat_numbers}} days)
+{% endblock  %}</div>
+        </div>
+        <div id="descriptive">{%  block descriptive %}{% endblock  %}</div>
         <div id="navbar">
-          <form>
-            <input class="activedate" type="date" name="start" />
-            <input class="activedate" type="date" name="end" />
+          <form id="dateranges">
+            <fieldset>
+              <legend>Period</legend>
+              <input value="{{  args.get('start', '')  }}" class="activedate" type="date" name="start" />
+              <input value="{{  args.get('finish', '')  }}" class="activedate" type="date" name="finish" />
+            </fieldset>
+            <fieldset>
+              <legend>Location</legend>
+              <select>
+                {%  for location in locations %}
+                {%  endfor  %}
+              </select>
+            </fieldset>
             <input type="submit" />
           </form>
         </div>

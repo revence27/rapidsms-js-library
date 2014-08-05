@@ -4,7 +4,7 @@ class ClientSide
 
   activateDates: (cn) ->
     for ad in $(".#{cn}", @doc)
-      $(ad).datepicker()
+      $(ad).datepicker({dateFormat: 'dd/mm/yy'})
 
 class ThousandQueries
   constructor: (@reqdata) ->

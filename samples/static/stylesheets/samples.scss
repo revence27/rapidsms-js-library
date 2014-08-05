@@ -1,29 +1,52 @@
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Kaushan+Script|Playfair+Display+SC:400,400italic,700,700italic,900,900italic|Roboto:400,400italic,700,700italic,900,900italic,500,500italic&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Kaushan+Script|Playfair+Display+SC:400,400italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext);
 
 $f1:  "Playfair Display", "Liberation Serif", serif;
 $f2:  "Playfair Display SC", $f1, sans-serif;
 $f3:  "Kaushan Script", $f2;
 $f4:  "Roboto", $f3;
+$f5:  "Roboto Condensed", $f4;
 
 $grlarge: 68.2%;
 $grsmall: 100% - $grlarge;
 
+$mainwarm: rgb(219, 149, 105);
+$subwarm: darken($mainwarm, 30%);
 $maindark: rgb(19, 19, 19);
+$subdark: lighten($maindark, 33%);
 $mainlight: rgb(236, 236, 236);
+$sublight: darken($mainlight, 33%);
+$maincool: rgb(74, 113, 136);
+$subcool: darken($maincool, 10%);
+$maincold: rgb(157, 177, 207);
+$subcold: lighten($maincold, 10%);
+
+$purewhite: rgb(255, 255, 255);
+$pluslight: rgba(255, 255, 255, 0.8);
+$barelywhite: rgba(255, 255, 255, 0.5);
 
 body
 {
   font-family: $f1;
   font-size: 14pt;
   font-weight: 100;
+  font-variant-settings: "dlig", "diag";
   background: $mainlight;
   color: $maindark;
 
+  table
+  {
+    border: none;
+    border-collapse: collapse;
+    font: inherit;
+    color: inherit;
+    background: inherit;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+
   #main
   {
-    width: 95%;
-    margin: 2%;
-    padding: 0.5%;
     padding-top: 0em;
     padding-bottom: 0em;
     margin-top: 0em;
@@ -34,11 +57,20 @@ body
 
       #nom
       {
-        #main
+        background: linear-gradient(to bottom, $maincool, lighten($maincool, 20%), $mainlight);
+        vertical-align: top;
+
+        #primary
         {
+          vertical-align: top;
+          img
+          {
+            margin-left: 2.5%;
+            margin-right: 1em;
+          }
         }
 
-        #sub
+        #secondary
         {
         }
 
@@ -49,22 +81,191 @@ body
 
       #navbar
       {
+        margin: 0.5em;
+        padding: 0.5em;
+        text-align: right;
+
+        #dateranges
+        {
+          background: $maincool;
+          background: linear-gradient(to bottom, $subcold, $maincool, $subcool, $subcool, $subcool, $maincool);
+          background: linear-gradient(to bottom, $mainlight, $subcold, $subcool);
+          color: $maincold;
+          border: solid 1px $sublight;
+          border-top: solid 1px $mainlight;
+          box-shadow: 0px -2px 5px $maincold;
+          text-align: right;
+          //  text-justify: distribute-all-lines;
+          padding-right: 0.25em;
+          margin-right: 0.25em;
+
+          input[type="text"], input[type="date"]
+          {
+            border-radius: 0.25em 0.25em 0.25em 0.25em;
+            font-family: $f4!important;
+            border: solid $mainlight 1px;
+            box-shadow: 1px 1px 2px $maindark;
+            padding: 0.25em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            margin-right: 0.75em;
+            width: 15em;
+          }
+
+          input[type="submit"], input[type="button"]
+          {
+            //  width: 100%;
+            //  display: inline-block;
+          }
+
+          fieldset
+          {
+            border: solid 1px $purewhite;
+            border-radius: 0.25em 0.25em 0.25em 0.25em;
+            padding: 0.125em;
+            margin: 0.125em;
+            display: inline-block;
+            
+            legend
+            {
+              font-family: $f4;
+              font-size: 75%;
+              color: $maincool;
+            }
+          }
+        }
       }
 
-      #maintitle
+      #subtitle
       {
-        font-family: $f3;
-        font-size: 240%;
+        padding-left: 3em;
+
+        .mainhead
+        {
+          font-family: $f3;
+          font-size: 300%;
+          color: $subcool;
+          text-shadow: 0.1em 0.1em 0.125em $sublight;
+        }
+
+        .extrainfo
+        {
+          font-family: $f1;
+          font-weight: 100;
+          font-size: 80%;
+
+          a
+          {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover
+            {
+              text-decoration: none;
+            }
+          }
+
+          div
+          {
+            display: inline;
+
+            &.location
+            {
+              margin-right: 2em;
+
+              &:after
+              {
+                content: ",";
+              }
+            }
+
+            &.times
+            {
+              .start
+              {
+                &:after
+                {
+                  content: " - "
+                }
+              }
+
+              .finish
+              {
+
+              }
+            }
+          }
+        }
       }
 
       #indicators
       {
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 1px 5px $maindark;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        //  background: $pluslight;
+
+        .homelink
+        {
+          display: inline;
+          font-weight: 500;
+          font-size: 75%;
+          font-family: $f4;
+          float: left;
+          margin: 0.25em;
+          border-radius: 0.25em 0.25em 0.25em 0.25em;
+          background: radial-gradient(circle, $maincool, $maincool, $subcool);
+          border: $maincool 1px solid;
+          color: $mainlight;
+          box-shadow: 1px 1px 1px $subdark;
+
+          a
+          {
+            padding: 0.25em;
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+
+        .indicator
+        {
+          display: inline;
+          width: 100% / 15;
+          background: linear-gradient(to bottom, $subcool, $maincool, $subcool, $subcool, $subcool);
+          border-radius: 0.125em 0.125em 0.125em 0.125em;
+          margin-left: 0.3em;
+          margin-right: 0.3em;
+          padding: 0.3em;
+          text-shadow: 0px 1px 2px $maindark;
+
+          a
+          {
+            color: $mainlight;
+            //  color: $maincool;
+            text-decoration: none;
+          }
+
+          &:hover, &.activeindicator
+          {
+            background: linear-gradient(to bottom, $subdark, $sublight, $subdark, $subdark, $subdark);
+
+            a, a:hover
+            {
+              //  color: $maincool;
+            }
+            //  font-weight: 400;
+          }
+        }
       }
 
       #langs
       {
         font-size: 50%;
         font-weight: 500;
+        margin-bottom: 0.5em;
+        margin-right: 2.5%;
 
         ol, ul
         {
@@ -88,7 +289,323 @@ body
 
     #trunk
     {
+      width: 95%;
+      margin: 2%;
+      padding: 0.5%;
+      background: radial-gradient(circle, darken($mainlight, 10%), $mainlight, $purewhite);
+      background: url('../images/preg.jpg') fixed no-repeat center;
+      padding-top: 0.125em;
+      padding-bottom: 0.125em;
+      color: darken($subdark, 10%);
+      font-weight: 100;
 
+      h1, h2, h3, h4, h5, h6
+      {
+      }
+
+      .humblecontainer, .smallcontainer, .largecontainer
+      {
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        margin-bottom: 0.25em;
+        //  background: $pluslight;
+      }
+
+      .humblecontainer
+      {
+        text-align: center;
+        width: 100%;
+        padding-top: 1em;
+
+        .explanation
+        {
+          font-family: $f4;
+          font-weight: 100;
+          font-size: 250%;
+          //  line-height: 0.75em;
+          margin: 0px;
+          font-style: italic;
+          color: $purewhite;
+          margin-top: 0.125em;
+          text-shadow: 0px 0px 3px $maindark;
+        }
+
+        &:hover
+        {
+          //  background: $barelywhite;
+        }
+
+        .breaker
+        {
+          width: 100%;
+          height: 7em;
+          overflow: hide;
+
+          img
+          {
+
+          }
+        }
+
+        .vals
+        {
+          text-align: justify;
+          //  -ms-text-justify: distribute-all-lines;
+          text-justify: distribute-all-lines;
+          width: 75%;
+          margin-left: 12.5%;
+
+          .stretch
+          {
+            display: inline-block;
+            width: 100%;
+          }
+
+          .dispval
+          {
+            float: center;
+            display: inline-block;
+            border-radius: 2em 2em 2em 2em;
+            padding: 0.5em;
+            //  border: solid 1px $mainwarm;
+            border: solid 1px $maincold;
+            width: 5em;
+            text-align: center;
+            //  background: radial-gradient(circle, $purewhite, $purewhite, darken($mainlight, 10%));
+            background: radial-gradient(circle, $purewhite, $purewhite, darken($mainlight, 10%));
+            //  box-shadow: 0px 0px 5px $maincool;
+            box-shadow: 0em 0em 1em $maindark;
+
+            .ttl
+            {
+              line-height: 0.8em;
+              text-align: center;
+              font-size: 75%;
+              //  color: $subwarm;
+              color: darken($maincold, 15%);
+              text-shadow: 0px 0px 2px $subcool;
+              //  text-shadow: 1px 1px 1px $mainwarm;
+              font-size: 120%;
+              font-family: $f4;
+              font-weight: 300;
+              padding-top: 0.25em;
+            }
+
+            .dat
+            {
+              font-family: $f4;
+              //  color: $mainwarm;
+              font-size: 175%;
+              font-style: italic;
+              line-height: 1em;
+            }
+          }
+        }
+
+        .charter
+        {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          text-justify: distribute-all-lines;
+          vertical-align: top;
+          margin-bottom: 2em;
+
+          .chart
+          {
+            display: inline-block;
+            width: 45%;
+            height: 8em;
+            padding-bottom: 2em;
+
+            .title
+            {
+              font-family: $f4;
+              font-weight: 500;
+              color: $mainlight;
+              text-shadow: -1px 1px 2px $maindark;
+              text-align: center;
+            }
+
+            .data
+            {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              text-justify: distribute-all-lines;
+              vertical-align: top;
+              border: $maincool solid 1px;
+              background: $barelywhite;
+              padding-bottom: 1em;
+
+              .datapoint
+              {
+                font-family: $f4;
+                font-size: 75%;
+                display: inline-block;
+                background: linear-gradient(to left, darken($maincold, 30%), darken($maincold, 10%), $maincold, $subcold, $mainlight);
+                width: 2.5em;
+                border: $maincold solid 1px;
+                //  padding: 1px;
+                //  padding-top: 2px;
+                color: $maindark;
+                vertical-align: top;
+
+                .value
+                {
+                  font-family: $f5;
+                  font-weight: 500;
+                }
+
+                .label
+                {
+                  font-size: 85%;
+                  font-family: $f2;
+                  padding-top: 0.75em;
+                  transform: rotate(90deg);
+                  -webkit-transform: rotate(90deg);
+                }
+              }
+            }
+          }
+
+          &:after
+          {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+
+      .smallcontainer, .largecontainer
+      {
+        border-radius: 0.125em 0.125em 0.125em 0.125em;
+        border: solid 3px $purewhite;
+        background: radial-gradient(circle, $purewhite, $purewhite, $purewhite, $pluslight, $pluslight, $barelywhite);
+
+        .infoname
+        {
+          font-size: 170%;
+          color: $maincool;
+          text-shadow: 2px 1px 3px $maincool;
+          /*
+          color: $mainwarm;
+          text-shadow: 2px 1px 3px $subwarm;
+          */
+          font-style: italic;
+          line-height: 0.55em;
+        }
+
+        .infodata
+        {
+          //  font-style: italic;
+          font-family: $f2;
+          font-size: 220%;
+          font-weight: 900;
+          text-shadow: 1px 1px 3px $maindark;
+          margin-left: 1em;
+
+          /*
+          &:before
+          {
+            color: $sublight;
+            content: " =";
+            font-size: 50%;
+          }
+          */
+
+          a, a:hover
+          {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .smallcontainer
+      {
+        font-family: $f1;
+        width: $grlarge;
+        margin-left: $grsmall / 2;
+        padding: 1em;
+        font-size: 150%;
+      }
+
+      .largecontainer
+      {
+        width: 95%;
+        margin-left: 2.5%;
+        font-family: $f4;
+        font-weight: 500;
+
+        .infopair
+        {
+          text-align: justify;
+          text-justify: distribute-all-lines;
+          height: 5em;
+          margin-top: 1em;
+          margin-bottom: 2em;
+
+          &:after
+          {
+            width: 100%;
+            display: inline-block;
+          }
+
+          .prem
+          {
+            display: inline-block;
+            width: 45%;
+            margin-left: 2.5%;
+          }
+
+          .scnd
+          {
+            display: inline-block;
+            width: 45%;
+            margin-left: 2.5%;
+          }
+
+          .prem, .scnd
+          {
+            text-align: center;
+            background: linear-gradient(to right, $purewhite, $mainlight, $purewhite);
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+
+            .infoname
+            {
+              //  color: $mainlight;
+              color: $maincool;
+              margin-bottom: 0.25em;
+              font-family: $f1;
+            }
+
+            .sum, .percent
+            {
+              //  margin-left: 5%;
+            }
+
+            .sum
+            {
+              font-size: 200%;
+              font-family: $f1;
+              font-weight: 700;
+            }
+
+            .percent
+            {
+              font-weight: 100;
+              font-size: 120%;
+
+              &:after
+              {
+                content: "%";
+              }
+            }
+          }
+        }
+      }
     }
 
     #footer
@@ -98,6 +615,7 @@ body
       font-weight: 500;
       text-align: center;
       margin-left: 25%;
+      margin-top: 3em;
       width: 50%;
     }
   }

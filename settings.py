@@ -2,9 +2,8 @@ import math
 import os
 import random
 
-BASE_TEMPLATE = os.getenv('BASE_TEMPLATE', 'base.html')
-STATIC_PATH   = os.getenv('STATIC_PATH', '../library')  # cycle back
-CSS_STATIC_PATH   = os.getenv('CSS_STATIC_PATH', '../display/stylesheets')  # cycle back
+BASE_TEMPLATE = os.getenv('BASE_TEMPLATE', 'novabase.html')
+STATIC_PATH   = os.getenv('STATIC_PATH', '/static')  # cycle back
 
 class FF:
   def __init__(self, dat, etc):
@@ -37,7 +36,6 @@ def generate_test_data():
     },
     'base_template' : BASE_TEMPLATE,
     'static_path'   : STATIC_PATH,
-    'css_path'      : CSS_STATIC_PATH,
     'filters'       : {
       'child_areas' : [
         {'name': 'Kigali City', 'id': 1, 'own_link': '?location=kigali'}
