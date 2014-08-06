@@ -241,7 +241,7 @@ body {
               color: #ececec;
               text-shadow: -1px 1px 2px #131313;
               text-align: center; }
-            body #main #trunk .humblecontainer .charter .chart .data {
+            body #main #trunk .humblecontainer .charter .chart .informer, body #main #trunk .humblecontainer .charter .chart .data {
               width: 100%;
               height: 100%;
               text-align: center;
@@ -250,24 +250,30 @@ body {
               border: #4a7188 solid 1px;
               background: rgba(255, 255, 255, 0.5);
               padding-bottom: 1em; }
-              body #main #trunk .humblecontainer .charter .chart .data .datapoint {
-                font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
-                font-size: 75%;
-                display: inline-block;
-                background: linear-gradient(to left, #45628e, #7b96be, #9db1cf, #bfcce0, #ececec);
-                width: 2.5em;
-                border: #9db1cf solid 1px;
-                color: #131313;
-                vertical-align: top; }
-                body #main #trunk .humblecontainer .charter .chart .data .datapoint .value {
-                  font-family: "Roboto Condensed", "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
-                  font-weight: 500; }
-                body #main #trunk .humblecontainer .charter .chart .data .datapoint .label {
-                  font-size: 85%;
-                  font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
-                  padding-top: 0.75em;
-                  transform: rotate(90deg);
-                  -webkit-transform: rotate(90deg); }
+            body #main #trunk .humblecontainer .charter .chart .informer .maindata {
+              color: #131313;
+              vertical-align: middle;
+              font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+              font-style: italic;
+              height: 100%; }
+            body #main #trunk .humblecontainer .charter .chart .data .datapoint {
+              font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+              font-size: 75%;
+              display: inline-block;
+              background: linear-gradient(to left, #45628e, #7b96be, #9db1cf, #bfcce0, #ececec);
+              width: 2.5em;
+              border: #9db1cf solid 1px;
+              color: #131313;
+              vertical-align: top; }
+              body #main #trunk .humblecontainer .charter .chart .data .datapoint .value {
+                font-family: "Roboto Condensed", "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+                font-weight: 500; }
+              body #main #trunk .humblecontainer .charter .chart .data .datapoint .label {
+                font-size: 85%;
+                font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+                padding-top: 0.75em;
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg); }
           body #main #trunk .humblecontainer .charter:after {
             display: inline-block;
             width: 100%; }
