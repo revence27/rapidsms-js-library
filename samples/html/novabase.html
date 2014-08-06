@@ -3,7 +3,7 @@
   <head>
     <title>RapidSMS • {%  block title %}  Welcome {%  endblock  %}</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    <!--  <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />  -->
+    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />
   </head>
   <body>
     <div id="main">
@@ -27,12 +27,13 @@
             <li>Français</li>
           </ul>
         </div>
+        {%  block topstrip  %}
         <div id="indicators">
           <div class="homelink">
             <a href="/">Home</a>
           </div>
           {%  for ind in indicators  %}
-          <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}">
+            <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}">
               <a href="/dashboards/{{ ind.ref }}">{{ ind.name  }}</a>
             </div>
           {%  endfor  %}
@@ -48,10 +49,12 @@
               </div>
               <div class="finish">
                 {{  nav.finish.strftime("%A %d %B %Y") }}
-</div></a> ({{  (nav.finish - nav.start).days|neat_numbers}} days)
-{% endblock  %}</div>
+              </div>
+            </div>
+            </a>
+            ({{  (nav.finish - nav.start).days|neat_numbers}} days)
+          {% endblock  %}</div>
         </div>
-        <div id="descriptive">{%  block descriptive %}{% endblock  %}</div>
         <div id="navbar">
           <form id="dateranges">
             <fieldset>
@@ -70,7 +73,8 @@
           </form>
         </div>
       </div>
-      <div id="trunk">
+      {%  endblock  %}
+      <div id="trunk"{% block trunkstyle  %}  style="background: url('{{  static_path }}/images/preg.jpg') fixed center no-repeat"{% endblock  %}>
         {%  block mainpart  %}
           {{  static_path }}
         {%  endblock  %}

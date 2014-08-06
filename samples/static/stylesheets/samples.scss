@@ -101,7 +101,7 @@ body
 
           input[type="text"], input[type="date"]
           {
-            border-radius: 0.25em 0.25em 0.25em 0.25em;
+            border-radius: 0.5em 0.5em 0.5em 0.5em;
             font-family: $f4!important;
             border: solid $mainlight 1px;
             box-shadow: 1px 1px 2px $maindark;
@@ -171,7 +171,7 @@ body
 
             &.location
             {
-              margin-right: 2em;
+              margin-right: 1em;
 
               &:after
               {
@@ -198,7 +198,7 @@ body
         }
       }
 
-      #indicators
+      #indicators, .indicators
       {
         width: 100%;
         text-align: center;
@@ -287,13 +287,43 @@ body
       }
     }
 
+    .mainlogin
+    {
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 5%;
+      background: $mainlight;
+      text-align: center;
+      
+      fieldset
+      {
+        border-radius: 1em 1em 1em 1em;
+        border: 1px solid $maincold;
+        box-shadow: 2px 2px 2px $maincold;
+        text-align: center;
+        background: $barelywhite;
+
+        legend
+        {
+          font-size: 75%;
+        }
+
+        input[type="text"], input[type="password"]
+        {
+          font-family: $f4;
+          width: 20em;
+        }
+      }
+    }
+
     #trunk
     {
       width: 95%;
       margin: 2%;
       padding: 0.5%;
       background: radial-gradient(circle, darken($mainlight, 10%), $mainlight, $purewhite);
-      background: url('../images/preg.jpg') fixed no-repeat center;
+      //  background: url('../images/preg.jpg') fixed no-repeat center;
+      //  background: attr(trunkimg) fixed no-repeat center;
       padding-top: 0.125em;
       padding-bottom: 0.125em;
       color: darken($subdark, 10%);
@@ -355,8 +385,9 @@ body
           width: 75%;
           margin-left: 12.5%;
 
-          .stretch
+          &:after
           {
+            content: " ";
             display: inline-block;
             width: 100%;
           }
@@ -389,6 +420,7 @@ body
               font-family: $f4;
               font-weight: 300;
               padding-top: 0.25em;
+              hyphens: auto;
             }
 
             .dat
@@ -503,7 +535,7 @@ body
           font-size: 220%;
           font-weight: 900;
           text-shadow: 1px 1px 3px $maindark;
-          margin-left: 1em;
+          margin-left: 5em;
 
           /*
           &:before

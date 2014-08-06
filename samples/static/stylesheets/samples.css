@@ -45,7 +45,7 @@ body {
           padding-right: 0.25em;
           margin-right: 0.25em; }
           body #main #header #navbar #dateranges input[type="text"], body #main #header #navbar #dateranges input[type="date"] {
-            border-radius: 0.25em 0.25em 0.25em 0.25em;
+            border-radius: 0.5em 0.5em 0.5em 0.5em;
             font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif !important;
             border: solid #ececec 1px;
             box-shadow: 1px 1px 2px #131313;
@@ -83,18 +83,18 @@ body {
           body #main #header #subtitle .extrainfo div {
             display: inline; }
             body #main #header #subtitle .extrainfo div.location {
-              margin-right: 2em; }
+              margin-right: 1em; }
               body #main #header #subtitle .extrainfo div.location:after {
                 content: ","; }
             body #main #header #subtitle .extrainfo div.times .start:after {
               content: " - "; }
-      body #main #header #indicators {
+      body #main #header #indicators, body #main #header .indicators {
         width: 100%;
         text-align: center;
         box-shadow: 0px 1px 5px #131313;
         padding-top: 0.5em;
         padding-bottom: 0.5em; }
-        body #main #header #indicators .homelink {
+        body #main #header #indicators .homelink, body #main #header .indicators .homelink {
           display: inline;
           font-weight: 500;
           font-size: 75%;
@@ -106,11 +106,11 @@ body {
           border: #4a7188 1px solid;
           color: #ececec;
           box-shadow: 1px 1px 1px #676767; }
-          body #main #header #indicators .homelink a {
+          body #main #header #indicators .homelink a, body #main #header .indicators .homelink a {
             padding: 0.25em;
             text-decoration: none;
             color: inherit; }
-        body #main #header #indicators .indicator {
+        body #main #header #indicators .indicator, body #main #header .indicators .indicator {
           display: inline;
           width: 100% / 15;
           background: linear-gradient(to bottom, #385667, #4a7188, #385667, #385667, #385667);
@@ -119,10 +119,10 @@ body {
           margin-right: 0.3em;
           padding: 0.3em;
           text-shadow: 0px 1px 2px #131313; }
-          body #main #header #indicators .indicator a {
+          body #main #header #indicators .indicator a, body #main #header .indicators .indicator a {
             color: #ececec;
             text-decoration: none; }
-          body #main #header #indicators .indicator:hover, body #main #header #indicators .indicator.activeindicator {
+          body #main #header #indicators .indicator:hover, body #main #header #indicators .indicator.activeindicator, body #main #header .indicators .indicator:hover, body #main #header .indicators .indicator.activeindicator {
             background: linear-gradient(to bottom, #676767, #989898, #676767, #676767, #676767); }
       body #main #header #langs {
         font-size: 50%;
@@ -141,12 +141,28 @@ body {
             display: inline;
             margin-left: 0.25em;
             margin-right: 0.25em; }
+    body #main .mainlogin {
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 5%;
+      background: #ececec;
+      text-align: center; }
+      body #main .mainlogin fieldset {
+        border-radius: 1em 1em 1em 1em;
+        border: 1px solid #9db1cf;
+        box-shadow: 2px 2px 2px #9db1cf;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5); }
+        body #main .mainlogin fieldset legend {
+          font-size: 75%; }
+        body #main .mainlogin fieldset input[type="text"], body #main .mainlogin fieldset input[type="password"] {
+          font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+          width: 20em; }
     body #main #trunk {
       width: 95%;
       margin: 2%;
       padding: 0.5%;
       background: radial-gradient(circle, lightgray, #ececec, white);
-      background: url("../images/preg.jpg") fixed no-repeat center;
       padding-top: 0.125em;
       padding-bottom: 0.125em;
       color: #4e4e4e;
@@ -177,7 +193,8 @@ body {
           text-justify: distribute-all-lines;
           width: 75%;
           margin-left: 12.5%; }
-          body #main #trunk .humblecontainer .vals .stretch {
+          body #main #trunk .humblecontainer .vals:after {
+            content: " ";
             display: inline-block;
             width: 100%; }
           body #main #trunk .humblecontainer .vals .dispval {
@@ -199,7 +216,8 @@ body {
               font-size: 120%;
               font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
               font-weight: 300;
-              padding-top: 0.25em; }
+              padding-top: 0.25em;
+              hyphens: auto; }
             body #main #trunk .humblecontainer .vals .dispval .dat {
               font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
               font-size: 175%;
@@ -272,7 +290,7 @@ body {
           font-size: 220%;
           font-weight: 900;
           text-shadow: 1px 1px 3px #131313;
-          margin-left: 1em;
+          margin-left: 5em;
           /*
           &:before
           {

@@ -1,8 +1,9 @@
 {%  extends base_template %}
 {%  block title %}  Pregnancies {%  endblock  %}
 {%  block subtitle %}  Pregnancies {%  endblock  %}
+{%  block trunkstyle  %} style="background: url('{{ static_path }}/images/preg.jpg') no-repeat fixed center"{%  endblock  %}
 {%  block mainpart  %}
-  <div class="smallcontainer" chosen-bg="{{ static_path }}/images/pregnancy.jpg">
+  <div class="smallcontainer">
     <div class="infoname">Total Pregnancies Confirmed</div>
     <div class="infodata goodnum">
       <a href="/tables/pregnancy">{{  display.total|neat_numbers }}</a>
