@@ -81,4 +81,30 @@
       </div>
     </div>
   </div>
+  <div class="largecontainer">
+    <div class="infopair">
+      <div class="prem">
+        <div class="infoname">Breast-feeding</div>
+        <div class="sum">{{  display.delivs[0].bfeed|neat_numbers }}</div>
+      </div>
+      <div class="scnd">
+        <div class="infoname">Not Breast-feeding</div>
+        <div class="sum">{{  (display.births - display.delivs[0].bfeed)|neat_numbers }}</div>
+      </div>
+    </div>
+  </div>
+    <!--  
+  <div class="largecontainer">
+    <div class="infopair">
+      <div class="prem">
+        <div class="infoname">Expected Deliveries</div>
+        <div class="sum">{{  display.expected|neat_numbers }}</div>
+      </div>
+      <div class="scnd">
+        <div class="infoname">Untracked Deliveries</div>
+        <div class="sum">{{  display.unknowns|neat_numbers }}</div>
+      </div>
+    </div>
+  </div>
+          -->
 {%  endblock  %}
