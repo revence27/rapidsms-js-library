@@ -1,5 +1,6 @@
 .*.swp
 *.pyc
+.sass-cache/
 preg.html
 settings.py
 Makefile

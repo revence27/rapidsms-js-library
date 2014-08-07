@@ -63,10 +63,21 @@ body
         #primary
         {
           vertical-align: top;
+          text-align: justify;
+          text-justify: distribute-all-lines;
+
           img
           {
             margin-left: 2.5%;
             margin-right: 1em;
+            display: inline-block;
+          }
+
+          &:after
+          {
+            content: " ";
+            width: 100%;
+            display: inline-block;
           }
         }
 
@@ -206,6 +217,9 @@ body
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         //  background: $pluslight;
+        font-family: $f5;
+        border-radius: 0.25em 0.25em 0.25em 0.25em;
+        font-weight: 100;
 
         .homelink
         {
@@ -216,10 +230,11 @@ body
           float: left;
           margin: 0.25em;
           border-radius: 0.25em 0.25em 0.25em 0.25em;
-          background: radial-gradient(circle, $maincool, $maincool, $subcool);
-          border: $maincool 1px solid;
-          color: $mainlight;
-          box-shadow: 1px 1px 1px $subdark;
+          //  background: radial-gradient(circle, $maincool, $maincool, $subcool);
+          //  border: $maincool 1px solid;
+          //  color: $mainlight;
+          color: $maincool;
+          box-shadow: 1px 1px 2px $subdark;
 
           a
           {
@@ -235,9 +250,9 @@ body
           width: 100% / 15;
           background: linear-gradient(to bottom, $subcool, $maincool, $subcool, $subcool, $subcool);
           border-radius: 0.125em 0.125em 0.125em 0.125em;
-          margin-left: 0.3em;
-          margin-right: 0.3em;
-          padding: 0.3em;
+          margin-left: 0.125em;
+          margin-right: 0.125em;
+          padding: 0.25em;
           text-shadow: 0px 1px 2px $maindark;
 
           a

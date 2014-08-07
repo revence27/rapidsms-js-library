@@ -23,6 +23,22 @@
   <div class="largecontainer">
     <div class="infopair">
       <div class="prem">
+        <div class="infoname">Male</div>
+        <div class="sum">{{  display.boys|neat_numbers }}</div>
+        <div class="percent">{{  "%.2f" % display.boyspc }}</div>
+      </div>
+      <div class="scnd">
+        <div class="infoname">Female</div>
+        <div class="sum">{{  display.girls|neat_numbers }}</div>
+        <div class="percent">{{  "%.2f" % display.girlspc }}</div>
+      </div>
+    </div>
+    <!--  
+  </div>
+  <div class="largecontainer">
+          -->
+    <div class="infopair">
+      <div class="prem">
         <div class="infoname">Expected Deliveries</div>
         <div class="sum">{{  display.expected|neat_numbers }}</div>
       </div>
