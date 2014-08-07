@@ -17,7 +17,7 @@
         <div class="data">
           {%  for lmp in display.lmps  %}
             <div class="datapoint" style="height: {{  "%.2f" % lmp.rpc  }}%">
-              <div class="value">{{  lmp.value  }}</div>
+              <div class="value">{{  lmp.value|neat_numbers  }}</div>
               <div class="label">Month {{  loop.index  }}</div>
             </div>
           {%  endfor  %}
@@ -28,7 +28,7 @@
         <div class="data">
           {%  for ma in display.monthavgs  %}
             <div class="datapoint" style="height: {{  "%.2f" % ma.rpc }}%">
-              <div class="value">{{  ma.value  }}</div>
+              <div class="value">{{  ma.value|neat_numbers  }}</div>
               <div class="label">{{  ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][loop.index]  }}</div>
             </div>
           {%  endfor  %}
