@@ -4,6 +4,7 @@ class ClientSide
 
   activateDates: (cn) ->
     for ad in $(".#{cn}", @doc)
+      alert(ad.tagName)
       $(ad).datepicker({dateFormat: 'dd/mm/yy'})
 
 class ThousandQueries
