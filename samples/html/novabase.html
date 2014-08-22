@@ -34,7 +34,7 @@
           </div>
           {%  for ind in indicators  %}
             <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}"{% if ind.title  %}  title="{{ ind.title }}{%  endif %}">
-              <a href="/dashboards/{{ ind.ref }}">{{ ind.name  }}</a>
+              <a href="/dashboards/{{ nav.link(ind.ref) }}">{{ ind.name  }}</a>
             </div>
           {%  endfor  %}
         </div>
