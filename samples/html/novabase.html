@@ -52,7 +52,7 @@
               </div>
             </div>
             </a>
-            ({{  (nav.finish - nav.start).days|neat_numbers}} days)
+            ({{  nav.gap.days|neat_numbers}} days)
           {% endblock  %}</div>
         </div>
         <div id="navbar">
@@ -64,8 +64,10 @@
             </fieldset>
             <fieldset>
               <legend>Location</legend>
-              <select>
-                {%  for location in locations %}
+              {%  set subarea = nav.subarea %}
+              <select name="{{  subarea  }}">
+                {%  for area in nav.areas %}
+                  <option value="{{ area['indexcol'] }}">{{  area['name'] }}</option>
                 {%  endfor  %}
               </select>
             </fieldset>

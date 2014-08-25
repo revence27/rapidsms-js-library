@@ -7,13 +7,16 @@ ClientSide = (function() {
   }
 
   ClientSide.prototype.activateDates = function(cn) {
-    var ad, _i, _len, _ref, _results;
+    var ad, it, _i, _len, _ref, _results;
     _ref = $("." + cn, this.doc);
     _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       ad = _ref[_i];
-      alert(ad.tagName);
-      _results.push($(ad).datepicker({
+      it = $(ad);
+      if (it.attr('type') !== 'text') {
+        continue;
+      }
+      _results.push(it.datepicker({
         dateFormat: 'dd/mm/yy'
       }));
     }

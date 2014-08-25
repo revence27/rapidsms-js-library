@@ -4,8 +4,9 @@ class ClientSide
 
   activateDates: (cn) ->
     for ad in $(".#{cn}", @doc)
-      alert(ad.tagName)
-      $(ad).datepicker({dateFormat: 'dd/mm/yy'})
+      it  = $(ad)
+      continue unless it.attr('type') == 'text'
+      it.datepicker({dateFormat: 'dd/mm/yy'})
 
 class ThousandQueries
   constructor: (@reqdata) ->
