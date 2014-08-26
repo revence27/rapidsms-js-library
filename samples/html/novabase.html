@@ -64,10 +64,15 @@
             </fieldset>
             <fieldset>
               <legend>Location</legend>
+              {%  for hie in nav.hierarchy  %}
+                {%  for k, v in hie %}
+                  <input type="hidden" value="{{  v }}" name="{{  k }}" />
+                {%  endfor  %}
+              {%  endfor %}
               {%  set subarea = nav.subarea %}
               <select name="{{  subarea  }}">
                 {%  for area in nav.areas %}
-                  <option value="{{ area['indexcol'] }}">{{  area['name'] }}</option>
+                  <option value="{{ area.indexcol }}">{{  area.name  }}</option>
                 {%  endfor  %}
               </select>
             </fieldset>
