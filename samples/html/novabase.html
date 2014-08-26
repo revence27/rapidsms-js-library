@@ -42,7 +42,7 @@
           <div class="mainhead">{%  block subtitle %}{% endblock  %}</div>
           <div class="extrainfo">{%  block extrainfo %}
             <!--  <a href="/tables/{{ ref }}"><div class="location">Rwanda</div>  -->
-            <a href=""><div class="location">Rwanda</div>
+            <a href="{{ nav.link(ref)  }}"><div class="location">{{ nav }}</div>
             <div class="times">
               <div class="start">
                 {{  nav.start.strftime("%A %d %B %Y") }}
@@ -52,7 +52,7 @@
               </div>
             </div>
             </a>
-            ({{  nav.gap.days|neat_numbers}} days)
+            ({{  (1 + (nav.finish - nav.start).days)|neat_numbers }} days)
           {% endblock  %}</div>
         </div>
         <div id="navbar">
@@ -65,16 +65,23 @@
             <fieldset>
               <legend>Location</legend>
               {%  for hie in nav.hierarchy  %}
-                {%  for k, v in hie %}
-                  <input type="hidden" value="{{  v }}" name="{{  k }}" />
+                {%  for k in hie %}
+                  <input type="hidden" value="{{  hie[k].indexcol }}" name="{{  k }}" />
                 {%  endfor  %}
               {%  endfor %}
-              {%  set subarea = nav.subarea %}
-              <select name="{{  subarea  }}">
-                {%  for area in nav.areas %}
-                  <option value="{{ area.indexcol }}">{{  area.name  }}</option>
+              <div class="listing">
+                {%  for el in nav.listing %}
+                  <div class="loc"><a href="/dashboards/{{  el.link(ref) }}">{{ el.name }} {{ el.title  }}</a></div>
                 {%  endfor  %}
-              </select>
+              </div>
+              {%  set ca  = nav.childareas  %}
+              {%  if  ca  %}
+                <select name="{{  nav.child  }}">
+                  {%  for area in ca %}
+                    <option{% if area.selected  %} selected="selected"{%  endif %} value="{{ area.indexcol }}">{{  area.name  }}</option>
+                  {%  endfor  %}
+                </select>
+              {%  endif %}
             </fieldset>
             <input type="submit" />
           </form>

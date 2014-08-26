@@ -71,6 +71,11 @@ body {
               font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
               font-size: 75%;
               color: #4a7188; }
+            body #main #header #navbar #dateranges fieldset .listing {
+              color: #131313;
+              font-size: 60%;
+              font-weight: 500;
+              text-align: left; }
       body #main #header #subtitle {
         padding-left: 3em; }
         body #main #header #subtitle .mainhead {
@@ -90,9 +95,9 @@ body {
           body #main #header #subtitle .extrainfo div {
             display: inline; }
             body #main #header #subtitle .extrainfo div.location {
-              margin-right: 1em; }
+              margin-right: 0.5em; }
               body #main #header #subtitle .extrainfo div.location:after {
-                content: ","; }
+                content: ":"; }
             body #main #header #subtitle .extrainfo div.times .start:after {
               content: " - "; }
       body #main #header #indicators, body #main #header .indicators {

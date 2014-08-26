@@ -143,6 +143,19 @@ body
               font-size: 75%;
               color: $maincool;
             }
+
+            .listing
+            {
+              color: $maindark;
+              font-size: 60%;
+              font-weight: 500;
+              text-align: left;
+
+              .loc
+              {
+
+              }
+            }
           }
         }
       }
@@ -182,11 +195,11 @@ body
 
             &.location
             {
-              margin-right: 1em;
+              margin-right: 0.5em;
 
               &:after
               {
-                content: ",";
+                content: ":";
               }
             }
 
