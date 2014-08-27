@@ -1,24 +1,4 @@
-{%  extends "pregnancy.html" %}
+{%  extends "basicpreg.html" %}
 {%  block mainpart  %}
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      {%  for col in display.cols %}
-        <th>{{  col[1] }}</th>
-      {%  endfor  %}
-    </tr>
-  </thead>
-  <tbody>
-    {%  for row in display.nat.list() %}
-      <tr class="{{ loop.cycle('even', 'odd')  }}">
-        <td>{{  loop.index  }}</td>
-        {%  for col in display.cols %}
-          <td>{{  row[col[0]]  }}</td>
-        {%  endfor  %}
-      </tr>
-    {%  endfor  %}
-  </tbody>
-</table>
-{{  display.nat.count() }}
+  {%  include "basictable.html"  %}
 {%  endblock  %}

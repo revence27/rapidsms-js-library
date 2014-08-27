@@ -21,8 +21,8 @@ $maincold: rgb(157, 177, 207);
 $subcold: lighten($maincold, 10%);
 
 $purewhite: rgb(255, 255, 255);
-$pluslight: rgba(255, 255, 255, 0.8);
-$barelywhite: rgba(255, 255, 255, 0.5);
+$pluslight: rgba(255, 255, 255, 0.85);
+$barelywhite: rgba(255, 255, 255, 0.65);
 
 body
 {
@@ -86,9 +86,9 @@ body
 
         #dateranges
         {
-          background: $maincool;
-          background: linear-gradient(to bottom, $subcold, $maincool, $subcool, $subcool, $subcool, $maincool);
-          background: linear-gradient(to bottom, $mainlight, $subcold, $subcool);
+          //  background: $maincool;
+          //  background: linear-gradient(to bottom, $subcold, $maincool, $subcool, $subcool, $subcool, $maincool);
+          background: linear-gradient(to top, $mainlight, $subcold, $subcool);
           color: $maincold;
           border: solid 1px $sublight;
           border-top: solid 1px $mainlight;
@@ -129,7 +129,8 @@ body
             {
               font-family: $f4;
               font-size: 75%;
-              color: $maincool;
+              color: $maindark;
+              text-shadow: 1px 1px 2px $purewhite;
             }
 
             .listing
@@ -678,6 +679,73 @@ body
         }
       }
 
+      #paginant
+      {
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        background: $pluslight;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+        font-weight: 700;
+        font-family: $f5;
+        margin: 0.25em;
+        padding: 0.25em;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        div
+        {
+          display: inline-block;
+
+          &.total
+          {
+            &:before
+            {
+              content: "Total: ";
+            }
+          }
+
+          &.navigant
+          {
+            ul
+            {
+              display: inline-block;
+              list-style: none;
+              margin: 0px;
+              padding: 0px;
+
+              li
+              {
+                display: inline-block;
+              }
+            }
+
+            &:before
+            {
+              content: "Pages: ";
+            }
+          }
+
+          &.total, &.navigant
+          {
+            &:before
+            {
+              font-family: $f1;
+              font-weight: normal;
+              font-style: italic;
+            }
+          }
+        }
+
+        &:after
+        {
+          content: " ";
+          width: 100%;
+          display: inline-block;
+        }
+      }
+
       table
       {
         border-collapse: collapse;
@@ -691,21 +759,6 @@ body
         font-size: 85%;
         font-size: 300;
 
-        tr
-        {
-          border-bottom: solid 1px $purewhite;
-
-          &.odd
-          {
-            background: $pluslight;
-          }
-
-          &.even
-          {
-            background: $barelywhite;
-          }
-        }
-
         thead
         {
           font-family: $f2;
@@ -715,6 +768,35 @@ body
         {
           font-family: $f4;
           font-weight: 300;
+
+          tr
+          {
+            border-bottom: solid 1px $purewhite;
+
+            &.odd
+            {
+              background: $pluslight;
+            }
+
+            &.even
+            {
+              background: $barelywhite;
+            }
+
+            td
+            {
+              &.cnt
+              {
+                font-family: $f1;
+                font-style: italic;
+
+                &:after
+                {
+                  content: ". ";
+                }
+              }
+            }
+          }
         }
       }
     }

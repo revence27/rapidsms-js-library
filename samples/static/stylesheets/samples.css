@@ -32,9 +32,7 @@ body {
         padding: 0.5em;
         text-align: right; }
         body #main #header #navbar #dateranges {
-          background: #4a7188;
-          background: linear-gradient(to bottom, #bfcce0, #4a7188, #385667, #385667, #385667, #4a7188);
-          background: linear-gradient(to bottom, #ececec, #bfcce0, #385667);
+          background: linear-gradient(to top, #ececec, #bfcce0, #385667);
           color: #9db1cf;
           border: solid 1px #989898;
           border-top: solid 1px #ececec;
@@ -61,7 +59,8 @@ body {
             body #main #header #navbar #dateranges fieldset legend {
               font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
               font-size: 75%;
-              color: #4a7188; }
+              color: #131313;
+              text-shadow: 1px 1px 2px white; }
             body #main #header #navbar #dateranges fieldset .listing {
               color: #131313;
               font-size: 60%;
@@ -160,7 +159,7 @@ body {
         border: 1px solid #9db1cf;
         box-shadow: 2px 2px 2px #9db1cf;
         text-align: center;
-        background: rgba(255, 255, 255, 0.5); }
+        background: rgba(255, 255, 255, 0.65); }
         body #main .mainlogin fieldset legend {
           font-size: 75%; }
         body #main .mainlogin fieldset input[type="text"], body #main .mainlogin fieldset input[type="password"] {
@@ -256,7 +255,7 @@ body {
               text-justify: distribute-all-lines;
               vertical-align: top;
               border: #4a7188 solid 1px;
-              background: rgba(255, 255, 255, 0.5);
+              background: rgba(255, 255, 255, 0.65);
               padding-bottom: 1em; }
             body #main #trunk .humblecontainer .charter .chart .informer .maindata {
               color: #131313;
@@ -288,7 +287,7 @@ body {
       body #main #trunk .smallcontainer, body #main #trunk .largecontainer {
         border-radius: 0.125em 0.125em 0.125em 0.125em;
         border: solid 3px white;
-        background: radial-gradient(circle, white, white, white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); }
+        background: radial-gradient(circle, white, white, white, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65)); }
         body #main #trunk .smallcontainer .infoname, body #main #trunk .largecontainer .infoname {
           font-size: 170%;
           color: #4a7188;
@@ -362,10 +361,44 @@ body {
               font-size: 120%; }
               body #main #trunk .largecontainer .infopair .prem .percent:after, body #main #trunk .largecontainer .infopair .scnd .percent:after {
                 content: "%"; }
+      body #main #trunk #paginant {
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+        font-weight: 700;
+        font-family: "Roboto Condensed", "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+        margin: 0.25em;
+        padding: 0.25em;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 1em;
+        padding-right: 1em; }
+        body #main #trunk #paginant div {
+          display: inline-block; }
+          body #main #trunk #paginant div.total:before {
+            content: "Total: "; }
+          body #main #trunk #paginant div.navigant ul {
+            display: inline-block;
+            list-style: none;
+            margin: 0px;
+            padding: 0px; }
+            body #main #trunk #paginant div.navigant ul li {
+              display: inline-block; }
+          body #main #trunk #paginant div.navigant:before {
+            content: "Pages: "; }
+          body #main #trunk #paginant div.total:before, body #main #trunk #paginant div.navigant:before {
+            font-family: "Playfair Display", "Liberation Serif", serif;
+            font-weight: normal;
+            font-style: italic; }
+        body #main #trunk #paginant:after {
+          content: " ";
+          width: 100%;
+          display: inline-block; }
       body #main #trunk table {
         border-collapse: collapse;
         font: inherit;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.85);
         color: inherit;
         margin: 0px;
         padding: 0px;
@@ -373,17 +406,22 @@ body {
         border: solid 1px white;
         font-size: 85%;
         font-size: 300; }
-        body #main #trunk table tr {
-          border-bottom: solid 1px white; }
-          body #main #trunk table tr.odd {
-            background: rgba(255, 255, 255, 0.8); }
-          body #main #trunk table tr.even {
-            background: rgba(255, 255, 255, 0.5); }
         body #main #trunk table thead {
           font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif; }
         body #main #trunk table tbody {
           font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
           font-weight: 300; }
+          body #main #trunk table tbody tr {
+            border-bottom: solid 1px white; }
+            body #main #trunk table tbody tr.odd {
+              background: rgba(255, 255, 255, 0.85); }
+            body #main #trunk table tbody tr.even {
+              background: rgba(255, 255, 255, 0.65); }
+            body #main #trunk table tbody tr td.cnt {
+              font-family: "Playfair Display", "Liberation Serif", serif;
+              font-style: italic; }
+              body #main #trunk table tbody tr td.cnt:after {
+                content: ". "; }
     body #main #footer {
       font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
       font-size: 50%;

@@ -59,16 +59,11 @@
           <form id="dateranges">
             <fieldset>
               <legend>Period</legend>
-              <input value="{{  args.get('start', '')  }}" class="activedate" type="text" name="start" />
-              <input value="{{  args.get('finish', '')  }}" class="activedate" type="text" name="finish" />
+              {%  include "dater.html"  %}
             </fieldset>
             <fieldset>
               <legend>Location</legend>
-              {%  for hie in nav.hierarchy  %}
-                {%  for k in hie %}
-                  <input type="hidden" value="{{  hie[k].indexcol }}" name="{{  k }}" />
-                {%  endfor  %}
-              {%  endfor %}
+              {%  include "locator.html"  %}
               <div class="listing">
                 {%  for el in nav.listing %}
                   <div class="loc"><a href="./{{  el.link(ref) }}">{{ el.name }} {{ el.title  }}</a></div>
