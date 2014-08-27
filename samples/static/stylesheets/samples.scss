@@ -170,6 +170,13 @@ body
           font-size: 300%;
           color: $subcool;
           text-shadow: 0.1em 0.1em 0.125em $sublight;
+
+          a, a:hover
+          {
+            text-decoration: inherit;
+            color: inherit;
+            font: inherit;
+          }
         }
 
         .extrainfo
@@ -680,6 +687,25 @@ body
               }
             }
           }
+        }
+      }
+
+      table
+      {
+        border-collapse: collapse;
+        font: inherit;
+        background: $pluslight;
+        color: inherit;
+
+        thead
+        {
+          font-family: $f2;
+        }
+
+        tbody
+        {
+          font-family: $f4;
+          font-weight: 300;
         }
       }
     }

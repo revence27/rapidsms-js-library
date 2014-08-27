@@ -83,6 +83,10 @@ body {
           font-size: 300%;
           color: #385667;
           text-shadow: 0.1em 0.1em 0.125em #989898; }
+          body #main #header #subtitle .mainhead a, body #main #header #subtitle .mainhead a:hover {
+            text-decoration: inherit;
+            color: inherit;
+            font: inherit; }
         body #main #header #subtitle .extrainfo {
           font-family: "Playfair Display", "Liberation Serif", serif;
           font-weight: 100;
@@ -367,6 +371,16 @@ body {
               font-size: 120%; }
               body #main #trunk .largecontainer .infopair .prem .percent:after, body #main #trunk .largecontainer .infopair .scnd .percent:after {
                 content: "%"; }
+      body #main #trunk table {
+        border-collapse: collapse;
+        font: inherit;
+        background: rgba(255, 255, 255, 0.8);
+        color: inherit; }
+        body #main #trunk table thead {
+          font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif; }
+        body #main #trunk table tbody {
+          font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+          font-weight: 300; }
     body #main #footer {
       font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
       font-size: 50%;

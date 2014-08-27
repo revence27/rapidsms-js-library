@@ -39,7 +39,7 @@
           {%  endfor  %}
         </div>
         <div id="subtitle">
-          <div class="mainhead">{%  block subtitle %}{% endblock  %}</div>
+          <div class="mainhead"><a href="/dashboards/{{ ref }}">{%  block subtitle %}{% endblock  %}</a></div>
           <div class="extrainfo">{%  block extrainfo %}
             <!--  <a href="/tables/{{ ref }}"><div class="location">Rwanda</div>  -->
             <a href="{{ nav.link(ref)  }}"><div class="location">{{ nav }}</div>
