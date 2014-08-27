@@ -6,15 +6,6 @@ body {
   font-variant-settings: "dlig", "diag";
   background: #ececec;
   color: #131313; }
-  body table {
-    border: none;
-    border-collapse: collapse;
-    font: inherit;
-    color: inherit;
-    background: inherit;
-    margin: 0px;
-    padding: 0px;
-    width: 100%; }
   body #main {
     padding-top: 0em;
     padding-bottom: 0em;
@@ -375,7 +366,19 @@ body {
         border-collapse: collapse;
         font: inherit;
         background: rgba(255, 255, 255, 0.8);
-        color: inherit; }
+        color: inherit;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        border: solid 1px white;
+        font-size: 85%;
+        font-size: 300; }
+        body #main #trunk table tr {
+          border-bottom: solid 1px white; }
+          body #main #trunk table tr.odd {
+            background: rgba(255, 255, 255, 0.8); }
+          body #main #trunk table tr.even {
+            background: rgba(255, 255, 255, 0.5); }
         body #main #trunk table thead {
           font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif; }
         body #main #trunk table tbody {

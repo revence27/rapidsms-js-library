@@ -71,7 +71,7 @@
               {%  endfor %}
               <div class="listing">
                 {%  for el in nav.listing %}
-                  <div class="loc"><a href="/dashboards/{{  el.link(ref) }}">{{ el.name }} {{ el.title  }}</a></div>
+                  <div class="loc"><a href="./{{  el.link(ref) }}">{{ el.name }} {{ el.title  }}</a></div>
                 {%  endfor  %}
               </div>
               {%  set ca  = nav.childareas  %}

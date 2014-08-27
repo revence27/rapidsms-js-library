@@ -33,18 +33,6 @@ body
   background: $mainlight;
   color: $maindark;
 
-  table
-  {
-    border: none;
-    border-collapse: collapse;
-    font: inherit;
-    color: inherit;
-    background: inherit;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-  }
-
   #main
   {
     padding-top: 0em;
@@ -696,6 +684,27 @@ body
         font: inherit;
         background: $pluslight;
         color: inherit;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        border: solid 1px $purewhite;
+        font-size: 85%;
+        font-size: 300;
+
+        tr
+        {
+          border-bottom: solid 1px $purewhite;
+
+          &.odd
+          {
+            background: $pluslight;
+          }
+
+          &.even
+          {
+            background: $barelywhite;
+          }
+        }
 
         thead
         {
