@@ -707,7 +707,7 @@ body
         }
       }
 
-      #paginant
+      .paginant
       {
         text-align: justify;
         text-justify: distribute-all-lines;
@@ -763,6 +763,12 @@ body
               font-weight: normal;
               font-style: italic;
             }
+          }
+
+          &.exinf
+          {
+            font-family: $f2;
+            font-size: 120%;
           }
         }
 

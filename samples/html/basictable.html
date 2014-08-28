@@ -1,15 +1,11 @@
 {%  set cpg, rng, pgs = nav.pages(display.nat) %}
 <div class="tdesc"><a href="">{{ display.desc  }} (Page {{  cpg + 1 }})</a></div>
-<div id="paginant">
+<div class="paginant">
   <div class="total">
     {{  display.nat.count()|neat_numbers }}
   </div>
-  <div class="navigant">
-    <ul>
-      {%  for page  in pgs  %}
-        <li>{%  if cpg == page  %}{{  loop.index  }}{%  else  %}<a href="./{{ nav.link(ref, page = page)  }}">{{ loop.index  }}</a>{% endif %}</li>
-      {%  endfor  %}
-    </ul>
+  <div class="exinf">
+    {{  nav.listing[-1].name  }}  {{  nav.listing[-1].title }}
   </div>
   <div class="exporter">
     <form method="POST" action="/exports/{{  ref }}">
@@ -41,3 +37,12 @@
     {%  endfor  %}
   </tbody>
 </table>
+<div class="paginant">
+  <div class="navigant">
+    <ul>
+      {%  for page  in pgs  %}
+        <li>{%  if cpg == page  %}{{  loop.index  }}{%  else  %}<a href="./{{ nav.link(ref, page = page)  }}">{{ loop.index  }}</a>{% endif %}</li>
+      {%  endfor  %}
+    </ul>
+  </div>
+</div>

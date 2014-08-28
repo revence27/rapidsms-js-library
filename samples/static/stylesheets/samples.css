@@ -377,7 +377,7 @@ body {
           color: inherit;
           text-decoration: none;
           font: inherit; }
-      body #main #trunk #paginant {
+      body #main #trunk .paginant {
         text-align: justify;
         text-justify: distribute-all-lines;
         background: rgba(255, 255, 255, 0.85);
@@ -390,24 +390,27 @@ body {
         margin-right: 10%;
         padding-left: 1em;
         padding-right: 1em; }
-        body #main #trunk #paginant div {
+        body #main #trunk .paginant div {
           display: inline-block; }
-          body #main #trunk #paginant div.total:before {
+          body #main #trunk .paginant div.total:before {
             content: "Total: "; }
-          body #main #trunk #paginant div.navigant ul {
+          body #main #trunk .paginant div.navigant ul {
             display: inline-block;
             list-style: none;
             margin: 0px;
             padding: 0px; }
-            body #main #trunk #paginant div.navigant ul li {
+            body #main #trunk .paginant div.navigant ul li {
               display: inline-block; }
-          body #main #trunk #paginant div.navigant:before {
+          body #main #trunk .paginant div.navigant:before {
             content: "Pages: "; }
-          body #main #trunk #paginant div.total:before, body #main #trunk #paginant div.navigant:before {
+          body #main #trunk .paginant div.total:before, body #main #trunk .paginant div.navigant:before {
             font-family: "Playfair Display", "Liberation Serif", serif;
             font-weight: normal;
             font-style: italic; }
-        body #main #trunk #paginant:after {
+          body #main #trunk .paginant div.exinf {
+            font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
+            font-size: 120%; }
+        body #main #trunk .paginant:after {
           content: " ";
           width: 100%;
           display: inline-block; }
