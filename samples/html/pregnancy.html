@@ -37,7 +37,7 @@
     <div class="infopair">
       <div class="prem">
         <div class="infoname">Reported Risks</div>
-        <div class="sum">{{  display.risks|neat_numbers }}</div>
+        <div class="sum"><a href="/tables/{{  nav.link("risks")  }}">{{  display.risks|neat_numbers }}</a></div>
         <div class="percent">{{  "%.2f" % display.riskpc }}</div>
       </div>
       <div class="scnd">
@@ -64,25 +64,25 @@
   <div class="humblecontainer">
     <div class="explanation">Mothers’ Symptoms</div>
     <div class="vals">
-      {%  for nom, cle in [
-        ('Coughing', 'coughing'),
-        ('Diarrhœa', 'diarrhoea'),
-        ('Fever', 'fever'),
-        ('Malaria', 'malaria'),
-        ('Vomiting', 'vomiting'),
-        ('Still-Born', 'stillb'),
-        ('Œdema', 'oedema'),
-        ('Jaundice', 'jaun'),
-        ('Pneumonia', 'pneumo'),
-        ('Disability', 'disab'),
-        ('Hypothermia', 'hypoth'),
-        ('Ibibari', 'ibibari'),
-        ('Cord Infection', 'cordi'),
-        ('Neck Stiffness', 'necks')
+      {%  for nom, cle, lk in [
+        ('Coughing', 'coughing', 'pregcough'),
+        ('Diarrhœa', 'diarrhoea', 'pregdiarrhea'),
+        ('Fever', 'fever', 'pregfever'),
+        ('Malaria', 'malaria', 'pregmalaria'),
+        ('Vomiting', 'vomiting', 'pregvomit'),
+        ('Still-Born', 'stillb', 'pregstill'),
+        ('Œdema', 'oedema', 'pregedema'),
+        ('Jaundice', 'jaun', 'pregjaundice'),
+        ('Pneumonia', 'pneumo', 'pregpneumonia'),
+        ('Disability', 'disab', 'pregdisability'),
+        ('Hypothermia', 'hypoth', 'preghypothemia'),
+        ('Ibibari', 'ibibari', 'preganemia'),
+        ('Cord Infection', 'cordi', 'pregcord'),
+        ('Neck Stiffness', 'necks', 'pregneck')
     ] %}
       <div class="dispval">
         <div class="ttl">{{ nom }}</div>
-        <div class="dat">{{  display.info[cle]  }}</div>
+        <div class="dat">{% if  display.info[cle] %}<a href="/tables/{{  nav.link(lk)  }}">{{  display.info[cle]  }}</a>{%  else  %}{{  display.info[cle] }}{%  endif %}</div>
       </div>
     {%  endfor  %}
     </div>
