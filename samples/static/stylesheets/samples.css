@@ -427,6 +427,8 @@ body {
         font-size: 300; }
         body #main #trunk table thead {
           font-family: "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif; }
+          body #main #trunk table thead th .hider {
+            font-family: "Roboto Condensed", "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif !important; }
         body #main #trunk table tbody {
           font-family: "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
           font-weight: 300; }

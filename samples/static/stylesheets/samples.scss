@@ -796,6 +796,14 @@ body
         thead
         {
           font-family: $f2;
+
+          th
+          {
+            .hider
+            {
+              font-family: $f5!important;
+            }
+          }
         }
 
         tbody

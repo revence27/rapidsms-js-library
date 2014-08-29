@@ -9,14 +9,14 @@
   </div>
   <div class="exporter">
     <form method="POST" action="/exports/{{  ref }}">
-      {%  include "locator.html"  %}
+      {%  include "hlocator.html"  %}
       {%  include "hdater.html"  %}
       <input type="hidden" value="export" name="wanna" />
       <input type="submit" value="Export" />
     </form>
   </div>
 </div>
-<table>
+<table class="largetable">
   <thead>
     <tr>
       <th>#</th>
