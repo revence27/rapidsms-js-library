@@ -3,7 +3,7 @@
   <head>
     <title>RapidSMS • {%  block title %}  Welcome {%  endblock  %}</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/samples.css" />
+    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/subjectivised.css" />
   </head>
   <body>
     <div id="main">
@@ -11,10 +11,8 @@
         <div id="nom">
           <div id="primary">
             <img src="{{  static_path }}/images/rwanda.png" />
-            <!--
           </div>
           <div id="secondary">
-                  -->
             <img src="{{  static_path }}/images/rapid.png" />
             <img src="{{  static_path }}/images/unicef.png" />
           </div>
@@ -41,7 +39,6 @@
         <div id="subtitle">
           <div class="mainhead"><a href="/dashboards/{{ ref }}">{%  block subtitle %}{% endblock  %}</a></div>
           <div class="extrainfo">{%  block extrainfo %}
-            <!--  <a href="/tables/{{ ref }}"><div class="location">Rwanda</div>  -->
             <a href="{{ nav.link(ref)  }}"><div class="location">{{ nav }}</div>
             <div class="times">
               <div class="start">
@@ -52,17 +49,22 @@
               </div>
             </div>
             </a>
-            ({{  (1 + (nav.finish - nav.start).days)|neat_numbers }} days)
+            <div class="count">{{  (1 + (nav.finish - nav.start).days)|neat_numbers }}</div>
           {% endblock  %}</div>
         </div>
         <div id="navbar">
           <form id="dateranges">
-            <fieldset>
+            <fieldset id="period">
               <legend>Period</legend>
               {%  include "dater.html"  %}
+              {%  include "hlocator.html"  %}
             </fieldset>
-            <fieldset>
+            <input type="submit" />
+          </form>
+          <form id="locations">
+            <fieldset id="location">
               <legend>Location</legend>
+              {%  include "hdater.html"  %}
               {%  include "locator.html"  %}
               <div class="listing">
                 {%  for el in nav.listing %}
@@ -78,7 +80,7 @@
                 </select>
               {%  endif %}
             </fieldset>
-            <input type="submit" />
+            {%  if  ca  %}<input type="submit" />{% endif %}
           </form>
         </div>
       </div>

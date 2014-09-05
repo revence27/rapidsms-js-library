@@ -2,7 +2,15 @@ $(() ->
   clt = new ClientSide(document)
   clt.activateDates 'activedate'
   deleteableColumns()
+  # jigTheNumbers()
 )
+
+jigTheNumbers = () ->
+  dem = $('.playable')
+  for it in dem
+    got = $(it)
+    cur = 10 - Math.floor(Math.random() * 20)
+    got.css('transform', "rotate(#{cur}deg)")
 
 deleteableColumns = () ->
   for t, i in $('.largetable thead th')
