@@ -213,7 +213,7 @@ body {
   font-family: "Chivo", "Exo", sans-serif;
   font-variant-settings: "dlig", "diag", "pnum";
   color: #090909;
-  font-size: 100;
+  font-size: 15pt;
   background: rgba(255, 255, 255, 0.3); }
   body #main #header a {
     color: inherit;
@@ -226,7 +226,6 @@ body {
     max-width: 68em;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 3px 3px 6px #a2a2a2;
     margin-top: 1em;
     padding: 3px; }
     body #main #header #subtitle:after {
@@ -274,10 +273,22 @@ body {
           content: "("; }
         body #main #header #subtitle .extrainfo .count:after {
           content: " days)"; }
+  body #main #header .navholder {
+    text-decoration: underline;
+    font-size: 75%;
+    display: block;
+    width: 20%;
+    margin-left: 40%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    cursor: pointer; }
   body #main #header #navbar {
+    box-shadow: 3px 3px 6px #a2a2a2;
+    border-radius: 5em 5em 5em 5em;
     background: inherit;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     padding-left: 5%;
     padding-right: 5%;
     text-align: justify;
@@ -388,10 +399,10 @@ body {
       display: block;
       margin-right: 2.35765%;
       width: 48.82117%;
-      box-shadow: 1px 1px 3px #6f6f6f;
       color: #161616;
       padding-left: 1em;
-      padding-right: 1em; }
+      padding-right: 1em;
+      text-align: center; }
       body #main #trunk .smallcontainer:last-child {
         margin-right: 0; }
       body #main #trunk .smallcontainer .infoname {
@@ -401,18 +412,19 @@ body {
         color: #6f6f6f;
         text-shadow: 1px 1px 2px #a2a2a2; }
       body #main #trunk .smallcontainer .infodata {
-        font-family: "Exo", sans-serif;
-        text-shadow: 2px 2px 3px #6f6f6f; }
+        text-shadow: 2px 2px 3px #6f6f6f;
+        font-family: "Exo", sans-serif; }
         body #main #trunk .smallcontainer .infodata a {
           color: inherit; }
       body #main #trunk .smallcontainer .goodnum {
-        font-size: 700%;
+        font-size: 500%;
         font-weight: 900; }
     body #main #trunk .humblecontainer {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 48.82117%; }
+      width: 48.82117%;
+      box-shadow: -2px 2px 4px #6f6f6f; }
       body #main #trunk .humblecontainer:last-child {
         margin-right: 0; }
       body #main #trunk .humblecontainer .datapoint {
@@ -447,8 +459,8 @@ body {
             margin-right: 0; }
         body #main #trunk .humblecontainer .datapoint:after {
           display: inline-block;
-          width: 50%;
-          margin-left: 25%;
+          width: 60%;
+          margin-left: 20%;
           border-bottom: dashed 1px #a2a2a2;
           content: " "; }
   body #main #footer {

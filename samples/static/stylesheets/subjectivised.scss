@@ -42,7 +42,7 @@ body
   font-variant-settings: "dlig", "diag", "pnum";
   //  background: $mainlightest;
   color: $maindark;
-  font-size: 100;
+  font-size: 15pt;
   background: $glass;
 
   #main
@@ -79,7 +79,6 @@ body
       {
         @include outer-container;
         //  border: solid 3px $mainlightest;
-        box-shadow: 3px 3px 6px $mainlightest;
         margin-top: 1em;
         padding: 3px;
 
@@ -135,12 +134,31 @@ body
         }
       }
 
+      .navholder
+      {
+        //  @include button(pill, $mainlightest, $mainlighter);
+        text-decoration: underline;
+        font-size: 75%;
+        display: block;
+        $wid: 20%;
+        width: $wid;
+        margin-left: (100% - $wid) / 2;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        cursor: pointer;
+        //  text-decoration: underline;
+      }
+
       #navbar
       {
+        //  display: none;
+        box-shadow: 3px 3px 6px $mainlightest;
         //  border: 1px solid $mainlightest;
+        border-radius: 5em 5em 5em 5em;
         background: inherit;
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
+        margin-top: 1em;
+        margin-bottom: 1em;
         padding-left: 5%;
         padding-right: 5%;
         @include justify-by-faith;
@@ -232,10 +250,10 @@ body
       .smallcontainer
       {
         @include span-columns(6);
-        box-shadow: 1px 1px 3px $mainlight;
         color: lighten($maindark, 5%);
         padding-left: 1em;
         padding-right: 1em;
+        text-align: center;
 
         .infoname
         {
@@ -249,19 +267,18 @@ body
 
         .infodata
         {
+          text-shadow: 2px 2px 3px $mainlight;
           font-family: $sans1;
 
           a
           {
             color: inherit;
           }
-
-          text-shadow: 2px 2px 3px $mainlight;
         }
 
         .goodnum
         {
-          font-size: 700%;
+          font-size: 500%;
           font-weight: 900;
         }
 
@@ -277,6 +294,7 @@ body
       .humblecontainer
       {
         @include span-columns(6);
+        box-shadow: -2px 2px 4px $mainlight;
         //  box-shadow: 0px 0px 3px $mainlightest;
 
         .datapoint
@@ -305,8 +323,8 @@ body
           &:after
           {
             display: inline-block;
-            width: 50%;
-            margin-left: 25%;
+            width: 60%;
+            margin-left: 20%;
             //  box-shadow: 1px 1px 2px $mainlightest;
             border-bottom: dashed 1px $mainlightest;
             content: " ";

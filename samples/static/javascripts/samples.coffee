@@ -2,14 +2,29 @@ $(() ->
   clt = new ClientSide(document)
   clt.activateDates 'activedate'
   deleteableColumns()
-  # jigTheNumbers()
+  # jigTheElements('.graphicard img', 20)
+  condenseNavBar()
 )
 
-jigTheNumbers = () ->
-  dem = $('.playable')
+condenseNavBar = () ->
+  nav = $('#navbar')
+  nnv = $('<a class="navholder">Show Navigation</a>')
+  nnv.hide()
+  nnv.click(() ->
+    nnv.hide('fast', () ->
+      nav.show('fast')
+    )
+  )
+  nav.parent().append(nnv)
+  nav.hide('slow', () ->
+    nnv.show()
+  )
+
+jigTheElements = (sel, deg) ->
+  dem = $(sel)
   for it in dem
     got = $(it)
-    cur = 10 - Math.floor(Math.random() * 20)
+    cur = (deg / 2) - Math.floor(Math.random() * deg)
     got.css('transform', "rotate(#{cur}deg)")
 
 deleteableColumns = () ->
