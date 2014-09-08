@@ -24,6 +24,11 @@ $glass: rgba(255, 255, 255, 0.3);
 $glasser: rgba(255, 255, 255, 0.5);
 $glassest: rgba(255, 255, 255, 0.7);
 
+@mixin round-properly($curve: 2em, $alt: 0em)
+{
+  border-radius: $curve $alt $curve $alt;
+}
+
 @mixin justify-by-faith
 {
   text-align: justify;
@@ -137,12 +142,15 @@ body
       .navholder
       {
         //  @include button(pill, $mainlightest, $mainlighter);
+        @include round-properly(0.5em);
+        box-shadow: 0px 0px 4px $mainlightest;
         text-decoration: underline;
         font-size: 75%;
         display: block;
         $wid: 20%;
-        width: $wid;
-        margin-left: (100% - $wid) / 2;
+        //  width: $wid;
+        //  margin-left: (100% - $wid) / 2;
+        //  margin-right: (100% - $wid);
         text-align: center;
         margin-top: 1em;
         margin-bottom: 1em;
@@ -155,7 +163,8 @@ body
         //  display: none;
         box-shadow: 3px 3px 6px $mainlightest;
         //  border: 1px solid $mainlightest;
-        border-radius: 5em 5em 5em 5em;
+        //  border-radius: 5em 5em 5em 5em;
+        @include round-properly(3em, 0.5em);
         background: inherit;
         margin-top: 1em;
         margin-bottom: 1em;
@@ -197,7 +206,7 @@ body
         }
       }
 
-      #indicators
+      #indicators, #rindicators
       {
         font-family: $sans2;
         text-align: right;
@@ -217,7 +226,8 @@ body
             padding: 0.25em;
             padding-bottom: 0.125em;
             padding-top: 0.125em;
-            border-radius: 0.5em 0.5em 0.5em 0.5em;
+            //  border-radius: 0.5em 0.5em 0.5em 0.5em;
+            @include round-properly(0.5em, 0.125em);
             box-shadow: 1px 1px 2px $mainlightest;
 
             &.activeindicator
@@ -235,6 +245,12 @@ body
             float: left;
           }
         }
+      }
+
+      #rindicators
+      {
+        font-size: 75%;
+        text-align: center;
       }
 
       #langs
@@ -295,6 +311,7 @@ body
       {
         @include span-columns(6);
         box-shadow: -2px 2px 4px $mainlight;
+        @include round-properly(2em, 0.25em);
         //  box-shadow: 0px 0px 3px $mainlightest;
 
         .datapoint

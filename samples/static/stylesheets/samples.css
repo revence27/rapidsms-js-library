@@ -99,7 +99,7 @@ body {
                 content: ":"; }
             body #main #header #subtitle .extrainfo div.times .start:after {
               content: " - "; }
-      body #main #header #indicators, body #main #header .indicators {
+      body #main #header #indicators, body #main #header .indicators, body #main #header #rindicators {
         width: 100%;
         text-align: center;
         box-shadow: 0px 1px 5px #131313;
@@ -108,7 +108,7 @@ body {
         font-family: "Roboto Condensed", "Roboto", "Kaushan Script", "Playfair Display SC", "Playfair Display", "Liberation Serif", serif, sans-serif;
         border-radius: 0.25em 0.25em 0.25em 0.25em;
         font-weight: 100; }
-        body #main #header #indicators .homelink, body #main #header .indicators .homelink {
+        body #main #header #indicators .homelink, body #main #header .indicators .homelink, body #main #header #rindicators .homelink {
           display: inline;
           font-weight: 500;
           font-size: 75%;
@@ -118,11 +118,11 @@ body {
           border-radius: 0.25em 0.25em 0.25em 0.25em;
           color: #4a7188;
           box-shadow: 1px 1px 2px #676767; }
-          body #main #header #indicators .homelink a, body #main #header .indicators .homelink a {
+          body #main #header #indicators .homelink a, body #main #header .indicators .homelink a, body #main #header #rindicators .homelink a {
             padding: 0.25em;
             text-decoration: none;
             color: inherit; }
-        body #main #header #indicators .indicator, body #main #header .indicators .indicator {
+        body #main #header #indicators .indicator, body #main #header .indicators .indicator, body #main #header #rindicators .indicator {
           display: inline;
           width: 100% / 15;
           background: linear-gradient(to bottom, #385667, #4a7188, #385667, #385667, #385667);
@@ -131,11 +131,13 @@ body {
           margin-right: 0.125em;
           padding: 0.25em;
           text-shadow: 0px 1px 2px #131313; }
-          body #main #header #indicators .indicator a, body #main #header .indicators .indicator a {
+          body #main #header #indicators .indicator a, body #main #header .indicators .indicator a, body #main #header #rindicators .indicator a {
             color: #ececec;
             text-decoration: none; }
-          body #main #header #indicators .indicator:hover, body #main #header #indicators .indicator.activeindicator, body #main #header .indicators .indicator:hover, body #main #header .indicators .indicator.activeindicator {
+          body #main #header #indicators .indicator:hover, body #main #header #indicators .indicator.activeindicator, body #main #header .indicators .indicator:hover, body #main #header .indicators .indicator.activeindicator, body #main #header #rindicators .indicator:hover, body #main #header #rindicators .indicator.activeindicator {
             background: linear-gradient(to bottom, #676767, #989898, #676767, #676767, #676767); }
+      body #main #header #rindicators {
+        font-size: 75%; }
       body #main #header #langs {
         font-size: 50%;
         font-weight: 500;

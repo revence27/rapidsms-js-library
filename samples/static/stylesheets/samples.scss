@@ -229,7 +229,7 @@ body
         }
       }
 
-      #indicators, .indicators
+      #indicators, .indicators, #rindicators
       {
         width: 100%;
         text-align: center;
@@ -293,6 +293,11 @@ body
             //  font-weight: 400;
           }
         }
+      }
+
+      #rindicators
+      {
+        font-size: 75%;
       }
 
       #langs

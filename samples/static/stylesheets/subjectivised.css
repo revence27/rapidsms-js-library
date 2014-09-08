@@ -274,18 +274,18 @@ body {
         body #main #header #subtitle .extrainfo .count:after {
           content: " days)"; }
   body #main #header .navholder {
+    border-radius: 0.5em 0em 0.5em 0em;
+    box-shadow: 0px 0px 4px #a2a2a2;
     text-decoration: underline;
     font-size: 75%;
     display: block;
-    width: 20%;
-    margin-left: 40%;
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
     cursor: pointer; }
   body #main #header #navbar {
     box-shadow: 3px 3px 6px #a2a2a2;
-    border-radius: 5em 5em 5em 5em;
+    border-radius: 3em 0.5em 3em 0.5em;
     background: inherit;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -360,30 +360,33 @@ body {
           font-size: 75%; }
     body #main #header #navbar .listing {
       font-family: "Volkhov", "Averia Serif Libre", serif; }
-  body #main #header #indicators {
+  body #main #header #indicators, body #main #header #rindicators {
     font-family: "Chivo", "Exo", sans-serif;
     text-align: right;
     padding-left: 2em;
     padding-right: 2em;
     font-weight: 500;
     margin: 1em; }
-    body #main #header #indicators div {
+    body #main #header #indicators div, body #main #header #rindicators div {
       display: inline-block;
       color: #232323; }
-      body #main #header #indicators div.indicator, body #main #header #indicators div.homelink {
+      body #main #header #indicators div.indicator, body #main #header #indicators div.homelink, body #main #header #rindicators div.indicator, body #main #header #rindicators div.homelink {
         border: solid 1px #898989;
         padding: 0.25em;
         padding-bottom: 0.125em;
         padding-top: 0.125em;
-        border-radius: 0.5em 0.5em 0.5em 0.5em;
+        border-radius: 0.5em 0.125em 0.5em 0.125em;
         box-shadow: 1px 1px 2px #a2a2a2; }
-        body #main #header #indicators div.indicator.activeindicator, body #main #header #indicators div.homelink.activeindicator {
+        body #main #header #indicators div.indicator.activeindicator, body #main #header #indicators div.homelink.activeindicator, body #main #header #rindicators div.indicator.activeindicator, body #main #header #rindicators div.homelink.activeindicator {
           background: #090909;
           border: solid 1px #898989;
           color: #898989;
           box-shadow: none; }
-      body #main #header #indicators div.homelink {
+      body #main #header #indicators div.homelink, body #main #header #rindicators div.homelink {
         float: left; }
+  body #main #header #rindicators {
+    font-size: 75%;
+    text-align: center; }
   body #main #header #langs {
     display: none; }
   body #main #trunk {
@@ -424,7 +427,8 @@ body {
       display: block;
       margin-right: 2.35765%;
       width: 48.82117%;
-      box-shadow: -2px 2px 4px #6f6f6f; }
+      box-shadow: -2px 2px 4px #6f6f6f;
+      border-radius: 2em 0.25em 2em 0.25em; }
       body #main #trunk .humblecontainer:last-child {
         margin-right: 0; }
       body #main #trunk .humblecontainer .datapoint {

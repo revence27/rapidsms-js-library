@@ -3,7 +3,8 @@
   <head>
     <title>RapidSMS • {%  block title %}  Welcome {%  endblock  %}</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/subjectivised.css" />
+    <link rel="stylesheet" type="text/css" href="{{ static_path }}/stylesheets/{%  if  nav.kw.get('format') == 'reports' %}samples{%  else  %}subjectivised{%  endif %}.css" />
+    
   </head>
   <body>
     <div id="main">
@@ -26,6 +27,13 @@
           </ul>
         </div>
         {%  block topstrip  %}
+        <div id="rindicators">
+          {%  for ind in rindicators  %}
+            <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}"{% if ind.title  %}  title="{{ ind.title }}{%  endif %}">
+              <a href="/dashboards/{{ nav.link(ind.ref, format = 'reports') }}">{{ ind.name  }}</a>
+            </div>
+          {%  endfor  %}
+        </div>
         <div id="indicators">
           <div class="homelink">
             <a href="/">Home</a>
