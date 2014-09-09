@@ -40,7 +40,7 @@
           </div>
           {%  for ind in indicators  %}
             <div class="indicator{%  if  ind.ref == ref %} activeindicator{%  endif %}"{% if ind.title  %}  title="{{ ind.title }}{%  endif %}">
-              <a href="/dashboards/{{ nav.link(ind.ref) }}">{{ ind.name  }}</a>
+              <a href="/dashboards/{{ nav.link(ind.ref, minus = ['format', 'page']) }}">{{ ind.name  }}</a>
             </div>
           {%  endfor  %}
         </div>
@@ -60,7 +60,7 @@
             <div class="count">{{  (1 + (nav.finish - nav.start).days)|neat_numbers }}</div>
           {% endblock  %}</div>
         </div>
-        <div id="navbar">
+        <div id="navbar"{%  if nav.kw.get('format') != 'reports'  %} class="collapsiblenav"{%  endif %}>
           <form id="dateranges">
             <fieldset id="period">
               <legend>Period</legend>

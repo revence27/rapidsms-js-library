@@ -3,11 +3,11 @@ $(() ->
   clt.activateDates 'activedate'
   deleteableColumns()
   # jigTheElements('.graphicard img', 20)
-  condenseNavBar()
+  condenseNavBar('.collapsiblenav')
 )
 
-condenseNavBar = () ->
-  nav = $('#navbar')
+condenseNavBar = (seeker) ->
+  nav = $(seeker)
   nnv = $('<a class="navholder">Show Navigation</a>')
   nnv.hide()
   nnv.click(() ->

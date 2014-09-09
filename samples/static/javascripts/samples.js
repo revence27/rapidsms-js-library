@@ -6,12 +6,12 @@ $(function() {
   clt = new ClientSide(document);
   clt.activateDates('activedate');
   deleteableColumns();
-  return condenseNavBar();
+  return condenseNavBar('.collapsiblenav');
 });
 
-condenseNavBar = function() {
+condenseNavBar = function(seeker) {
   var nav, nnv;
-  nav = $('#navbar');
+  nav = $(seeker);
   nnv = $('<a class="navholder">Show Navigation</a>');
   nnv.hide();
   nnv.click(function() {

@@ -6,13 +6,13 @@
       <a href="{{ nav.link("/tables/mothers") }}">{{  display.total|neat_numbers }}</a>
     </div>
     <div class="graphicard">
-      <img src="{{  static_path }}/images/repreg3.png" />
+      <img src="{{  static_path }}/images/mum-and-baby.png" />
     </div>
   </div>
   <div class="humblecontainer">
     {%  include "basicdisplay.html" %}
     <div class="datapoint">
-      <div class="number playable">{{  (display.pregs - display.total)|neat_numbers  }}</div>
+      <div class="number playable">{{  display.pregs|neat_numbers  }}</div>
       <div class="descr">With Previous Pregnancies</div>
     </div>
   </div>
