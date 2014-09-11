@@ -11,9 +11,11 @@
   </div>
   <div class="humblecontainer">
     {%  include "basicdisplay.html" %}
+    {%  if display.pregs  %}
     <div class="datapoint">
-      <div class="number playable">{{  display.pregs|neat_numbers  }}</div>
+      <div class="number playable"><a href="{{  nav.link("/tables/mothers", subcat = 'withprev')  }}">{{  display.pregs|neat_numbers  }}</a></div>
       <div class="descr">With Previous Pregnancies</div>
     </div>
+    {%  endif %}
   </div>
 {%  endblock  %}

@@ -467,6 +467,13 @@ body {
           margin-left: 20%;
           border-bottom: dashed 1px #a2a2a2;
           content: " "; }
+      body #main #trunk .humblecontainer .participant {
+        padding: 0.5em; }
+        body #main #trunk .humblecontainer .participant tr td {
+          padding-left: 0.5em;
+          padding-right: 0.5em; }
+          body #main #trunk .humblecontainer .participant tr td.goodtot {
+            text-align: right; }
   body #main #footer {
     text-align: center;
     font-size: 50%;

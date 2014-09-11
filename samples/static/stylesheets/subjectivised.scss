@@ -347,6 +347,25 @@ body
             content: " ";
           }
         }
+
+        .participant
+        {
+          padding: 0.5em;
+
+          tr
+          {
+            td
+            {
+              padding-left: 0.5em;
+              padding-right: 0.5em;
+
+              &.goodtot
+              {
+                text-align: right;
+              }
+            }
+          }
+        }
       }
     }
 

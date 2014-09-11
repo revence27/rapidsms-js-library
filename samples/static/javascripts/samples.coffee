@@ -3,8 +3,37 @@ $(() ->
   clt.activateDates 'activedate'
   deleteableColumns()
   # jigTheElements('.graphicard img', 20)
-  condenseNavBar('.collapsiblenav')
+  condenseNavBar '.collapsiblenav'
+  participatingTable '.participant'
 )
+
+participatingTable  = (seeker)  ->
+  tbl = $(seeker)
+  curlk = document.location.toString()
+  pcs   = curlk.split('?')[1] or ''
+  for tr in $('tr', tbl)
+    row = $(tr)
+    for td in $('td', row)
+      cell  = $(td)
+      pn    = cell.attr('partname')
+      if pn?
+        ncell = $('<td></td>')
+        ncell.addClass 'goodtot'
+        clink = $('<a>…</a>')
+        # parts = {'subcat': pn}
+        # for pt in pcs.split('&')
+        #   pts = pt.split('=')
+        #   parts[pts[0]] = pts[1]
+        thelnk  = "#{pcs}&subcat=#{pn}"
+        clink.attr('href', "/tables/reports?#{thelnk}")
+        ncell.append(clink)
+        cell.before(ncell)
+        $.ajax("/data/reports?#{thelnk}", {
+          # data: parts,
+          context: clink,
+          success: (dat, stt, xhr) ->
+            this.text(dat['total'])
+        })
 
 condenseNavBar = (seeker) ->
   nav = $(seeker)
