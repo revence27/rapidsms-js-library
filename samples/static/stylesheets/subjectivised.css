@@ -473,7 +473,10 @@ body {
           padding-left: 0.5em;
           padding-right: 0.5em; }
           body #main #trunk .humblecontainer .participant tr td.goodtot {
-            text-align: right; }
+            text-align: right;
+            font-family: "Exo", sans-serif;
+            font-weight: 900;
+            font-size: 200%; }
   body #main #footer {
     text-align: center;
     font-size: 50%;
