@@ -467,16 +467,17 @@ body {
           margin-left: 20%;
           border-bottom: dashed 1px #a2a2a2;
           content: " "; }
-      body #main #trunk .humblecontainer .participant {
+      body #main #trunk .humblecontainer .dimensioned {
         padding: 0.5em; }
-        body #main #trunk .humblecontainer .participant tr td {
-          padding-left: 0.5em;
-          padding-right: 0.5em; }
-          body #main #trunk .humblecontainer .participant tr td.goodtot {
-            text-align: right;
-            font-family: "Exo", sans-serif;
-            font-weight: 900;
-            font-size: 200%; }
+        body #main #trunk .humblecontainer .dimensioned tr {
+          font-size: 150%; }
+          body #main #trunk .humblecontainer .dimensioned tr td {
+            padding-left: 0.5em;
+            padding-right: 0.5em; }
+            body #main #trunk .humblecontainer .dimensioned tr td.goodtot {
+              text-align: right;
+              font-family: "Exo", sans-serif;
+              font-weight: 900; }
   body #main #footer {
     text-align: center;
     font-size: 50%;

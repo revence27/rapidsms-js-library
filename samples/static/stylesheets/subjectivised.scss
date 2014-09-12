@@ -348,12 +348,13 @@ body
           }
         }
 
-        .participant
+        .dimensioned
         {
           padding: 0.5em;
 
           tr
           {
+            font-size: 150%;
             td
             {
               padding-left: 0.5em;
@@ -364,7 +365,6 @@ body
                 text-align: right;
                 font-family: $sans1;
                 font-weight: 900;
-                font-size: 200%;
               }
             }
           }
