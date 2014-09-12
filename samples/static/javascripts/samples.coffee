@@ -20,10 +20,6 @@ participatingTable  = (seeker)  ->
         ncell = $('<td></td>')
         ncell.addClass 'goodtot'
         clink = $('<a>…</a>')
-        # parts = {'subcat': pn}
-        # for pt in pcs.split('&')
-        #   pts = pt.split('=')
-        #   parts[pts[0]] = pts[1]
         thelnk  = "#{pcs}&subcat=#{pn}"
         clink.attr('href', "/tables/reports?#{thelnk}")
         ncell.append(clink)
