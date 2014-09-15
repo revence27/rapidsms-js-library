@@ -23,6 +23,7 @@
       {%  for col in display.cols %}
         <th>{{  col[1] }}</th>
       {%  endfor  %}
+      {%  if  display.attrs %}<th>Attributes</th>{% endif %}
     </tr>
   </thead>
   <tbody>
@@ -31,8 +32,16 @@
       <tr class="{{ loop.cycle('even', 'odd')  }}">
         <td class="cnt">{{  rng[0] + loop.index  }}</td>
         {%  for col in display.cols %}
-          <td>{{  row[col[0]]  }}</td>
+          {%  set mkp = display.markup[col[0]] %}
+          <td>{%  if  mkp %}{{  mkp(row[col[0]], row, col)  }}{%  else  %}{{  row[col[0]]  }}{% endif %}</td>
         {%  endfor  %}
+        {%  if  display.attrs %}
+        <td>
+          {%  for bc in display.attrs %}
+          {%  if  row[bc[0]] == True %}<div class="boolval">{{  bc[1] }}</div>{% endif %}
+          {%  endfor  %}
+        </td>
+        {%  endif %}
       </tr>
     {%  endfor  %}
   </tbody>

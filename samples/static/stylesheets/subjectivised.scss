@@ -50,6 +50,14 @@ body
   font-size: 15pt;
   background: $glass;
 
+  .boolval
+  {
+    border: 1px solid $maindark;
+    margin: 2px;
+    border-radius: 20% 20% 20% 20%;
+    text-align: center;
+  }
+
   #main
   {
     #header
