@@ -215,6 +215,8 @@ body {
   color: #090909;
   font-size: 15pt;
   background: rgba(255, 255, 255, 0.3); }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Exo", sans-serif; }
   body .boolval {
     border: 1px solid #090909;
     margin: 2px;
